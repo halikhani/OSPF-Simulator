@@ -1,0 +1,47 @@
+add router 1111
+add router 2222
+add client 1.1.1.1
+add client 2.2.2.2
+connect 1.1.1.1 1111 0
+connect 2.2.2.2 2222 0
+sec 5
+ping 1.1.1.1 2.2.2.2
+connect 1111 2222 2
+sec 12
+ping 2.2.2.2 1.1.1.1
+ping 1.1.1.1 2.2.2.2
+link 2222 1111 d
+ping 1.1.1.1 2.2.2.2
+sec 40
+ping 1.1.1.1 2.2.2.2
+link 2222 1111 e
+sec 10
+ping 1.1.1.1 2.2.2.2
+add router 3333
+add client 3.3.3.3
+connect 3.3.3.3 3333 0
+connect 3333 1111 2
+connect 3333 2222 100
+sec 100
+ping 3.3.3.3 2.2.2.2
+link 1111 2222 d
+ping 3.3.3.3 2.2.2.2
+sec 100
+ping 3.3.3.3 2.2.2.2
+=================================
+add router 1111
+add router 2222
+add client 1.1.1.1
+add client 2.2.2.2
+connect 1.1.1.1 1111 0
+connect 2.2.2.2 2222 0
+sec 5
+ping 1.1.1.1 2.2.2.2
+connect 1111 2222 2
+sec 12
+ping 2.2.2.2 1.1.1.1
+add router 3333
+add client 3.3.3.3
+connect 3.3.3.3 3333 0
+connect 3333 2222 3
+ping 3.3.3.3 1.1.1.1
